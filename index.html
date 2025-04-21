@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript</title>
+  <style>
+    body {
+      background-color:#A76545;
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding: 40px;
+      text-align: center;
+    }
+    .box {
+	
+      background-color:#1DCD9F;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: auto;
+      transition: transform 0.3s;
+    }
+    .box:hover {
+	
+	color:white;
+      transform: scale(1.02);
+    }
+    h1 {
+      color: #4E1F00;
+    }
+    .output {
+      text-align: left;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>JavaScript Output</h1>
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    let output = document.getElementById("output");
+
+    // 1. Print your name and address
+    output.innerHTML += "Name: Shreya Kumari<br><br>";
+    output.innerHTML += "Address: Vill-post-Maricha, District-Saran, Pin-Code-841411<br><br>";
+
+    // 2. Check whether value and data-type of two variables are same
+    let a = 10;
+    let b = "10";
+    if (a === b) {
+      output.innerHTML += "Same value and data type<br><br>";
+    } else {
+      output.innerHTML += "Either value or data type or both are different<br><br>";
+    }
+
+    // 3. Add two strings and return them with all alphabet capital
+    function combineAndCapitalize(str1, str2) {
+      return (str1 + str2).toUpperCase();
+    }
+    output.innerHTML += "Combined and Capitalized String: " + combineAndCapitalize("hello", "world") + "<br><br>";
+
+    // 4. Convert the length of a given string in bytes
+    function stringLengthInBytes(str) {
+      return new TextEncoder().encode(str).length;
+    }
+    output.innerHTML += "Byte length: " + stringLengthInBytes("Hello world") + "<br><br>";
+
+    // 5. Round a number to a specified amount of digits
+    function roundToDigits(number, digits) {
+      const factor = Math.pow(10, digits);
+      return Math.round(number * factor) / factor;
+    }
+    output.innerHTML += "Rounded Number: " + roundToDigits(3.1415926535, 3) + "<br>";
+  </script>
+</body>
+</html>
